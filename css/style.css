@@ -1,0 +1,21 @@
+body, html {
+    display: block;
+    padding: 0;
+    margin: 0;
+    width: 100%;
+    position: relative;
+    height: 100%;
+}
+
+.topo {
+    width: 100%;
+    position: relative;
+    height: 500px;
+    background: radial-gradient(circle, rgb(233, 176, 55), #DF3A01);
+    color: black;
+    border-bottom: 1px solid #db8300;
+    background-attachment: fixed;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+}
