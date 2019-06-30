@@ -1,25 +1,29 @@
 <!DOCTYPE html>
-<html lang="en">
+<html ng-app="appzeebeer">
 
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <title>Document</title>
+    <meta name="author" content="Dowglas Maia">
+
+    <title>Cevejaria</title>
 
     <link rel="stylesheet" href="node_modules/bootstrap/dist/css/bootstrap.min.css">
     <link rel="stylesheet" href="node_modules/@fortawesome/fontawesome-free/css/all.min.css">
     <link rel="stylesheet" href="css/style.css">
 
+    <link rel="icon" type="image/x-icon" href="favicon.ico">
+
 </head>
 
-<body>
+<body ng-controller="zeebeerCtrl">
 
     <!--=== HEADER ===-->
     <header class="topo">
         <nav class="navbar navbar-expand-lg navbar-dark fixed-top" id="mainNav">
             <div class="container">
-                <a href="#topo" class="navbar-brand">Cervejaria</a>
+                <a href="#topo" class="navbar-brand">{{app}}</a>
                 <button class="navbar-toggler navbar-toggler-right" data-toggle="collapse"
                     data-target="#navbarResponsive" aria-controls="navbarResponsive" aria-expanded="false"
                     aria-label="Toggle Navigation">menu</button>
@@ -62,20 +66,88 @@
     </header>
 
     <section>
-        <header>
-            <h2>Nossas Cervejas</h2>
-        </header>
+        <br>
+        <div class="container">
+            <header>
+                <h2 class="text-center">Nossas Cervejas</h2>
+                <hr>
+            </header>
+
+            <div class="card-columns">
+                <div class="card profile-card" ng-repeat=" cerveja in cervejas">
+                    <!-- Img-->
+                    <div class="card-img-block" ng-show="cerveja.img">
+                        <img ng-src="img/{{cerveja.img}}" class="img-fluid" alt="Responsive image">
+                    </div>
+                    <div class="card-body">
+                        <!-- Titulo-->
+                        <div class="card-title">
+                            <h5>{{cerveja.nome}}
+                                <small><em>{{cerveja.tipo}}</em></small>
+                            </h5>
+                            <!-- Descrição-->
+                            <p class="card-text">
+                                {{cerveja.descricao | cut:true:100:' ...'}}
+                            </p>
+                            <!-- Footer -->
+                            <footer class="blockquote-footer">
+                                <cite class="source title">
+                                    {{cerveja.composicao}}
+                                </cite>
+                            </footer>
+                            <br>
+
+                            <!-- Butão Ler Mais-->
+                            <button class="btn btn-outline-warning btn-block text-dark" ng-click="detalhar(cerveja)"
+                                data-toggle="modal" data-target="#detalhes">Leia Mais
+                            </button>
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+
+
+
+        </div>
+        <br>
     </section>
 
-    <section>
-        <header>
-            <h2>História</h2>
-        </header>
+    <!-- Nosa Historia-->
+    <section class="bg-historia">
+        <canvas id="beerCanvas2"></canvas>
+        <div class="container">
+            <header>
+                <h2 class="text-center">História</h2>
+                <hr>
+            </header>
+            <div class="row">
+                <div class="col-sm-8 col-xs-12 text-justify">
+                    <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Ut at placeat voluptatum vel corrupti
+                        maiores reiciendis dolorum veritatis vitae adipisci nam error et omnis quos saepe pariatur,
+                        consectetur ad reprehenderit?</p>
+                    <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Ut at placeat voluptatum vel corrupti
+                        maiores reiciendis dolorum veritatis vitae adipisci nam error et omnis quos saepe pariatur,
+                        consectetur ad reprehenderit?</p>
+                    <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Ut at placeat voluptatum vel corrupti
+                        maiores reiciendis dolorum veritatis vitae adipisci nam error et omnis quos saepe pariatur,
+                        consectetur ad reprehenderit?</p>
+
+                </div>
+
+                <div class="col-sm-4 col-xs-12 text-center">
+                    <img src="img/cerv.jpg" class="rounded-pill mb-2" style="width: 200px">
+                    <img src="img/cevj0.jpg" class="rounded-pill mb-2" style="width: 200px">
+                </div>
+            </div>
+        </div>
+
     </section>
 
     <section>
         <header>
             <h2>Contatos</h2>
+            <hr>
         </header>
     </section>
 
@@ -104,13 +176,68 @@
         </div>
     </footer>
 
-
-
-
+    <!-- Modal Cervejas-->
+    <div class="modal fade" id="detalhes" tabindex="-1" role="dialog" aria-labelledby="exampleModalLongTitle"
+        aria-hidden="true">
+        <div class="modal-dialog modal-lg modal-dialog-centered" role="document">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title" id="exampleModalLongTitle">
+                        {{cervejaDetalhe.nome}} -
+                        <small><cite title="Source Title">{{cervejaDetalhe.composicao}}</cite></small>
+                    </h5>
+                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                        <span aria-hidden="true">&times;</span>
+                    </button>
+                </div>
+                <div class="modal-body">
+                    <div ng-show="cervejaDetalhe.img">
+                        <img class="card-img-top" ng-src="img/{{cervejaDetalhe.img}}" width="200px">
+                        <hr>
+                    </div>
+                    <dl class="row">
+                        <dt class="col-sm-3">
+                            <h5>Tipo:</h5>
+                        </dt>
+                        <dd class="col-sm-9">
+                            <p>{{cervejaDetalhe.tipo}}</p>
+                        </dd>
+                        <dt class="col-sm-3">
+                            <h5>Ingredientes:</h5>
+                        </dt>
+                        <dd class="col-sm-9">
+                            <p>{{cervejaDetalhe.ingredientes}}</p>
+                        </dd>
+                        <dt class="col-sm-3">
+                            <h5>Descrição:</h5>
+                        </dt>
+                        <dd class="col-sm-9">
+                            <blockquote>
+                                <p class="text-justify" ng-bind-html="cervejaDetalhe.descricao"></p>
+                            </blockquote>
+                        </dd>
+                    </dl>
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-outline-warning text-dark btn-block"><i
+                            class="fas fa-beer"></i> Quero beber</button>
+                </div>
+            </div>
+        </div>
+    </div>
 
     <script src="node_modules/jquery/dist/jquery.min.js"></script>
     <script src="node_modules/bootstrap/dist/js/bootstrap.min.js"></script>
+    <script src="node_modules/popper.js/dist/umd/popper.min.js"></script>
+
+    <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.7.2/angular.min.js"></script>
+    <script src="js/bd.js"></script>
+    <script src="js/angular-sanitize.js"></script>
     <script src="js/script.js"></script>
+    <script src="js/appzeebeer.js"></script>
+
+
+
 
 </body>
 
