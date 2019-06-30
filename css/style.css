@@ -19,3 +19,13 @@ body, html {
     background-repeat: no-repeat;
     background-size: cover;
 }
+#mainNav a{
+    color: #000;
+
+}
+
+#mainNav button{
+    color: #000;
+    border: 1px solid #eb8303;
+
+}
