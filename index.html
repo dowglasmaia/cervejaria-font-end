@@ -23,16 +23,22 @@
     <header class="topo">
         <nav class="navbar navbar-expand-lg navbar-dark fixed-top" id="mainNav">
             <div class="container">
-                <a href="#topo" class="navbar-brand">{{app}}</a>
+                <a href="#topo" onclick="$('body').animatescroll();" class="navbar-brand">{{app}}</a>
                 <button class="navbar-toggler navbar-toggler-right" data-toggle="collapse"
                     data-target="#navbarResponsive" aria-controls="navbarResponsive" aria-expanded="false"
                     aria-label="Toggle Navigation">menu</button>
 
                 <div class="collapse navbar-collapse" id="navbarResponsive">
                     <ul class="navbar-nav ml-auto">
-                        <li class="nav-item"><a href="#" class="nav-link">Nossas Cervejas</a></li>
-                        <li class="nav-item"><a href="#" class="nav-link">História</a></li>
-                        <li class="nav-item"><a href="#" class="nav-link">Contatos</a></li>
+                        <li class="nav-item">
+                            <a href="#" onclick="$('#cervejas').animatescroll()" class="nav-link">Nossas Cervejas</a>
+                        </li>
+                        <li class="nav-item">
+                            <a href="#" onclick="$('#historia').animatescroll()" class="nav-link">História</a>
+                        </li>
+                        <li class="nav-item">
+                            <a href="#" onclick="$('#contatos').animatescroll()" class="nav-link">Contatos</a>
+                        </li>
                     </ul>
                 </div>
             </div>
@@ -65,9 +71,9 @@
         </div>
     </header>
 
-    <section>
-        <br>
-        <div class="container">
+    <section id="cervejas">
+            <br>
+        <div class="container mt-5">
             <header>
                 <h2 class="text-center">Nossas Cervejas</h2>
                 <hr>
@@ -114,15 +120,16 @@
     </section>
 
     <!-- Nosa Historia-->
-    <section class="bg-historia">
+    <section id="historia" class="bg-historia">
+        <br>
         <canvas id="beerCanvas2"></canvas>
-        <div class="container">
+        <div class="container mt-5 ">
             <header>
                 <h2 class="text-center">História</h2>
                 <hr>
             </header>
             <div class="row">
-                <div class="col-sm-8 col-xs-12 text-justify">
+                <div class="col-md-8 col-xs-12 text-justify">
                     <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Ut at placeat voluptatum vel corrupti
                         maiores reiciendis dolorum veritatis vitae adipisci nam error et omnis quos saepe pariatur,
                         consectetur ad reprehenderit?</p>
@@ -144,11 +151,65 @@
 
     </section>
 
-    <section>
-        <header>
-            <h2>Contatos</h2>
-            <hr>
-        </header>
+    <!-- Contatos -->
+    <section id="contatos">
+        <br>
+        <div class="container mt-5">
+            <header class="text-center">
+                <h2>Contatos</h2>
+                <hr>
+            </header>
+
+            <!-- .row>(.col-sm-8>form>.form-group.float-label-control*4>label{nome}+input) +.col-sm-4-->
+            <div class="row">
+                <div class="col-sm-8">
+                    <form role="form">
+                        <div class="form-group float-label-control">
+                            <label for="">Nome</label>
+                            <input class="form-control" type="text" placeholder="Nome">
+                        </div>
+                        <div class="form-group float-label-control">
+                            <label for="">e-mail</label>
+                            <input class="form-control" type="text" placeholder="e-mail">
+                        </div>
+                        <div class="form-group float-label-control">
+                            <label for="">Telefone</label>
+                            <input class="form-control" type="text" placeholder="telefone">
+                        </div>
+                        <div class="form-group float-label-control">
+                            <label for="">Minha Menssagem</label>
+                            <textarea class="form-control" type="textarea" placeholder="Messagem"></textarea>
+                        </div>
+
+                        <div class="clearFix">
+                            <!-- btn.btn.btn-outline-warning.float-right.text-dark>i.fas.fa-paper-plane{Enviar}-->
+                            <button class="btn btn-outline-warning float-right text-dark">
+                                <i class="fas fa-paper-plane"></i>
+                                Enviar
+                            </button>
+                        </div>
+
+                    </form>
+                </div>
+                <div class="col-sm-4 text-right">
+                    <br>
+                    <b>Contato de Serviços e Compra</b>
+                    <hr>
+                    <span> Telefone: +55 002 1111-8888</span> <br>
+                    <b>E-Mail: </b><br>
+                    <a href="#">contato@maiati.com</a> <br>
+
+                    <br>
+                    <b>Endereço</b> <br>
+                    <span> Rua C | Centro | Goiânia | Go | Brasil</span> <br>
+                    <b>Site: </b><br>
+                    <a href="#">maiati.com</a> <br>
+                </div>
+
+            </div>
+        </div>
+
+        <br>
     </section>
 
     <!-- Footer -->
@@ -159,13 +220,16 @@
             </div>
 
             <div class="btn-group text-white my-3 shadow-sm">
-                <a href="#" target="_blank" class="text-dark btn btn-outline-warning">
+                <a href="https://www.facebook.com/dowglasmaia19" target="_blank"
+                    class="text-dark btn btn-outline-warning">
                     <i class="fab fa-facebook"></i>
                 </a>
-                <a href="#" target="_blank" class="text-dark btn btn-outline-warning">
+                <a href="https://www.linkedin.com/in/dowglasmaia/" target="_blank"
+                    class="text-dark btn btn-outline-warning">
                     <i class="fab fa-linkedin"></i>
                 </a>
-                <a href="#" target="_blank" class="text-dark btn btn-outline-warning">
+                <a href="https://www.instagram.com/dowglasmaia/" target="_blank"
+                    class="text-dark btn btn-outline-warning">
                     <i class="fab fa-instagram"></i></a>
             </div>
 
@@ -179,7 +243,7 @@
     <!-- Modal Cervejas-->
     <div class="modal fade" id="detalhes" tabindex="-1" role="dialog" aria-labelledby="exampleModalLongTitle"
         aria-hidden="true">
-        <div class="modal-dialog modal-lg modal-dialog-centered" role="document">
+        <div class="modal-dialog modal-dialog-centered" role="document">
             <div class="modal-content">
                 <div class="modal-header">
                     <h5 class="modal-title" id="exampleModalLongTitle">
@@ -235,6 +299,8 @@
     <script src="js/angular-sanitize.js"></script>
     <script src="js/script.js"></script>
     <script src="js/appzeebeer.js"></script>
+    <script src="js/contato.js"></script>
+    <script src="js/animatescroll.min.js"></script>
 
 
 
