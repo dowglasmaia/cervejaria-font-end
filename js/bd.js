@@ -31,7 +31,7 @@ var cervejas = [
 		'descricao' : `Se trata da versão mais popular da cerveja IPA, mas podemos te dizer que ela também é subdividida em algumas regiões, aqui no Brasil não ouvimos muito falar sobre isso, já nos Estados Unidos costuma-se ouvir que a American IPA se divide entre duas categorias: East Coast e West Coast (inventada na Califórnia).
 					   <br><br>Duas características marcantes são o amargor que ela apresenta e também o aroma intenso que vem dos lúpulos americanos. 
 					   <br><br>Na Polifônica sentiremos os lúpulos que remetem a frutas tropicais e um leve sabor de graviola. Essas diversas notas de frutas nos fizeram homenagear uma das bandas mais melódicas de Belo Horizonte, Graveola e o Lixo Polifônico. Quando sentir vontade de viajar num mar de notas musicais e poesia, escute-os! Logo logo lembrará de nossa cerveja!`,
-		'img' : ''
+		'img' : '003.jpg'
 
 	},
 	{
@@ -42,7 +42,7 @@ var cervejas = [
 		'descricao' : `Dry stout ou Irish stout (em irlandês, leann dubh, "cerveja preta") é um estilo de cerveja bem escura e que muitas vezes tem um sabor "torrado" ou semelhante a café. Enquanto a maior parte das versões comerciais depende primariamente de cevada torrada como grão escuro, outras usam malte chocolate, malte black ou combinações dos três. 
 					   O exemplo mais famoso é a Guinnes. O conteúdo alcoólico e a sensação "seca" (pouco açúcar) de uma stout são ambas caracterizadas como leve, embora varie de país para país. A secura provém do uso da cevada torrada. 
 					   Nossa 4P, “poder para o povo preto” é uma homenagem ao movimento Black Power. Luta , respeito e igualdade são um dos lemas de nossa cervejaria.`,
-		'img' : ''
+		'img' : '002.jpg'
 
 	},
 	{
@@ -63,7 +63,7 @@ var cervejas = [
 		'descricao' : `Com o surgimento das cervejas Pilsen, cervejarias do mundo todo procuram alternativas para concorrer com a nova sensação do universo cervejeiro. Na Bélgica, a partir das cervejas de Abadia, criou-se uma cerveja mais clara e menos amarga, a Belgian Blond Ale, que são cervejas complexas, perfumadas e muito cremosas. Há uma grande harmonia entre seu teor alcoólico, sua presença de lúpulo e de malte. Elas têm a cor variando do amarelo palha ao dourado, com espuma branca, densa e duradoura. 
 					   <br><br>Mas a nossa Sereias não é loira! Autêntica, como deve ser qualquer cerveja, nossa versão belga é vermelha! Utilizamos hibisco em nossa receita, trazendo a cor e um sabor cítrico. Mas pra deixa-la única, não fizemos só “colorir” a cerveja. Com uma carbonatação mais elevada, o cítrico do hibisco fica mais ressaltado. 
 					   <br><br>Quer beber e ao mesmo tempo combater os radicais livres e ficar sem reter líquido? A Sereias é a solução! Mas cuidado, é a nossa cerveja com o maior teor alcoólico!`,
-		'img' : ''
+		'img' : '004.jpg'
 
 	},
 	{
